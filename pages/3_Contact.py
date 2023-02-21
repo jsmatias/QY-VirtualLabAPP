@@ -4,6 +4,7 @@ st.title("Contact")
 st.write("""
 ---
 email: smatias.jean@gmail.com \\
-github: https://github.com/jsmatias
+github: https://github.com/jsmatias \\
+webpage: https://jsmatias.net
 
 """)
