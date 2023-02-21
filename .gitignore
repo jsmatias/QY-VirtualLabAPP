@@ -1,0 +1,41 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Environments
+.env
+.venv
+ucnp-sim-streamlit-venv/
+ENV/
+
+# IDEs
+.vscode/
+.idea/
+
+# Compiled python files
+*.pyc
+
+# Logs
+*.log
+
+# Local config files
+*.ini
+*.cfg
+*.conf
+
+# Cache files
+*.sqlite3
+*.db
+*.cache
+*.rdb
+*.pkl
+
+# Other
+.DS_Store
+Thumbs.db
