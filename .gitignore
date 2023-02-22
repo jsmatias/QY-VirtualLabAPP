@@ -12,6 +12,7 @@ build/
 .env
 .venv
 ucnp-sim-streamlit-venv/
+*venv/
 ENV/
 
 # IDEs
