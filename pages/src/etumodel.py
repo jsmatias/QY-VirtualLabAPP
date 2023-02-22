@@ -31,7 +31,7 @@ def QYj(j, rho, inputConstants):
   nu = cte.c / (inputConstants.excitationWavelength * 10**(-9))
   alpha = inputConstants.crossSection / (cte.h * nu)
 
-  return Nj(j, rho, inputConstants) / (alpha * rho * inputConstants.NS)
+  return Nj(j, rho, inputConstants) * inputConstants.RArad[j] / (alpha * rho * inputConstants.NS)
 
 
 def getTransitionPoints(inputConstants):

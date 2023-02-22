@@ -135,7 +135,7 @@ def sidebar():
       "$R^{rad}_1$ - Radiative decay rate of the first energy state [$s^{-1}$]")
     col1, col2, col3 = st.columns([10, 1, 8])
     with col1:
-      x = st.number_input('Coefficient', min_value=0.0, max_value=9.9, value=1.7, step=0.1, format="%.3f",
+      x = st.number_input('Coefficient', min_value=0.0, max_value=9.9, value=0.0, step=0.1, format="%.3f",
                           key='act-rad-decay-rate-1-val', help=None, label_visibility="collapsed")
     with col2:
       st.write("E")
@@ -153,7 +153,7 @@ def sidebar():
     with col2:
       st.write("E")
     with col3:
-      y = st.number_input('Exponent', min_value=0, max_value=10, value=5, step=1, format="%i",
+      y = st.number_input('Exponent', min_value=0, max_value=10, value=3, step=1, format="%i",
                           key='act-rad-decay-rate-2-power', help=None, label_visibility="collapsed")
     Values.RArad.append(x * 10 ** y)
 
