@@ -5,13 +5,13 @@ from pages.src.display import *
 from pages.src.etumodel import getData, getTransitionPoints
 
 st.set_page_config(
-    page_title="UCNPs virtual lab",
+    page_title="UC virtual lab",
     page_icon="🧪",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
-st.title("UCNP virtual lab (Beta)")
+st.title("Upconversion virtual lab")
 
 st.markdown("---")
 

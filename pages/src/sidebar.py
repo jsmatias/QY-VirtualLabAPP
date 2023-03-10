@@ -24,11 +24,11 @@ def sidebar():
   # Sensitizer
   with st.sidebar.expander("Sensitizer"):
 
-    st.caption("$N_A$ - Ground state population density [$cm^{-3}$]")
+    st.caption("$N_S$ - Ground state population density [$cm^{-3}$]")
     # st.latex("N_0 [cm^{-3}]")
     col1, col2, col3 = st.columns([10, 1, 8])
     with col1:
-      x = st.number_input('Coefficient', min_value=0.0, max_value=9.9, value=1.5, step=0.1, format="%.3f",
+      x = st.number_input('Coefficient', min_value=0.0, max_value=9.9, value=1.87, step=0.1, format="%.3f",
                           key='sens-pop-dens-val', help=None, label_visibility="collapsed")
     with col2:
       st.write("E")
@@ -41,7 +41,7 @@ def sidebar():
 
     st.caption(
       r"$R_b$ - Decay rate of the excited state $\left |b \right >$ [$s^{-1}$]")
-    Values.Rb = st.number_input("Value", min_value=0.0, max_value=1e5, value=757.57, step=10.0, format="%g",
+    Values.Rb = st.number_input("Value", min_value=0.0, max_value=1e5, value=434.57, step=10.0, format="%g",
                                 key='sens-decay-rate', help=None, label_visibility="collapsed")
 
     st.markdown("---")
@@ -50,23 +50,23 @@ def sidebar():
     # st.latex("N_0 [cm^{-3}]")
     col1, col2, col3 = st.columns([10, 1, 8])
     with col1:
-      x = st.number_input('Coefficient', min_value=0.0, max_value=9.9, value=1.69, step=0.01, format="%.3f",
+      x = st.number_input('Coefficient', min_value=0.0, max_value=9.9, value=1.0, step=0.01, format="%.3f",
                           key='sens-cross-sect-val', help=None, label_visibility="collapsed")
     with col2:
       st.write("E")
     with col3:
-      y = st.number_input('Exponent', min_value=-30, max_value=-10, value=-20, step=1, format="%i",
+      y = st.number_input('Exponent', min_value=-30, max_value=-10, value=-21, step=1, format="%i",
                           key='sens-cross-sect-power', help=None, label_visibility="collapsed")
     Values.crossSection = x * 10 ** (y)
 
   # Activator
   with st.sidebar.expander("Activator"):
 
-    st.caption("$N_S$ - Ground state population density [$cm^{-3}$]")
+    st.caption("$N_A$ - Ground state population density [$cm^{-3}$]")
     # st.latex("N_0 [cm^{-3}]")
     col1, col2, col3 = st.columns([10, 1, 8])
     with col1:
-      x = st.number_input('Coefficient', min_value=0.0, max_value=9.9, value=1.27, step=0.1, format="%.3f",
+      x = st.number_input('Coefficient', min_value=0.0, max_value=9.9, value=9.36, step=0.1, format="%.3f",
                           key='act-pop-dens-val', help=None, label_visibility="collapsed")
     with col2:
       st.write("E")
@@ -76,36 +76,36 @@ def sidebar():
     Values.NA = x * 10 ** (y)
 
     st.markdown("---")
-    st.write("Non radiative decay rates")
+    st.write("Linear decay rates")
     Values.RA = [None]
     st.caption("$R_1$ - Decay rate of the first energy state [$s^{-1}$]")
     col1, col2, col3 = st.columns([10, 1, 8])
     with col1:
-      x = st.number_input('Coefficient', min_value=0.0, max_value=9.9, value=1.7, step=0.1, format="%.3f",
+      x = st.number_input('Coefficient', min_value=0.0, max_value=9.9, value=8.3, step=0.1, format="%.3f",
                           key='act-decay-rate-1-val', help=None, label_visibility="collapsed")
     with col2:
       st.write("E")
     with col3:
-      y = st.number_input('Exponent', min_value=0, max_value=10, value=4, step=1, format="%i",
+      y = st.number_input('Exponent', min_value=0, max_value=10, value=1, step=1, format="%i",
                           key='act-decay-rate-1-power', help=None, label_visibility="collapsed")
     Values.RA.append(x * 10 ** y)
 
     st.caption("$R_2$ - Decay rate of the second energy state [$s^{-1}$]")
     col1, col2, col3 = st.columns([10, 1, 8])
     with col1:
-      x = st.number_input('Coefficient', min_value=0.0, max_value=9.9, value=1.0, step=0.1, format="%.3f",
+      x = st.number_input('Coefficient', min_value=0.0, max_value=9.9, value=5.0, step=0.1, format="%.3f",
                           key='act-decay-rate-2-val', help=None, label_visibility="collapsed")
     with col2:
       st.write("E")
     with col3:
-      y = st.number_input('Exponent', min_value=0, max_value=10, value=5, step=1, format="%i",
+      y = st.number_input('Exponent', min_value=0, max_value=10, value=2, step=1, format="%i",
                           key='act-decay-rate-2-power', help=None, label_visibility="collapsed")
     Values.RA.append(x * 10 ** y)
 
     st.caption("$R_3$ - Decay rate of the third energy state [$s^{-1}$]")
     col1, col2, col3 = st.columns([10, 1, 8])
     with col1:
-      x = st.number_input('Coefficient', min_value=0.0, max_value=9.9, value=1.5, step=0.1, format="%.3f",
+      x = st.number_input('Coefficient', min_value=0.0, max_value=9.9, value=1.48, step=0.1, format="%.3f",
                           key='act-decay-rate-3-val', help=None, label_visibility="collapsed")
     with col2:
       st.write("E")
@@ -117,7 +117,7 @@ def sidebar():
     st.caption("$R_4$ - Decay rate of the fourth energy state [$s^{-1}$]")
     col1, col2, col3 = st.columns([10, 1, 8])
     with col1:
-      x = st.number_input('Coefficient', min_value=0.0, max_value=9.9, value=1.5, step=0.1, format="%.3f",
+      x = st.number_input('Coefficient', min_value=0.0, max_value=9.9, value=2.0, step=0.1, format="%.3f",
                           key='act-decay-rate-4-val', help=None, label_visibility="collapsed")
     with col2:
       st.write("E")
@@ -135,12 +135,12 @@ def sidebar():
       "$R^{rad}_1$ - Radiative decay rate of the first energy state [$s^{-1}$]")
     col1, col2, col3 = st.columns([10, 1, 8])
     with col1:
-      x = st.number_input('Coefficient', min_value=0.0, max_value=9.9, value=0.0, step=0.1, format="%.3f",
+      x = st.number_input('Coefficient', min_value=0.0, max_value=9.9, value=0.01, step=0.1, format="%.3f",
                           key='act-rad-decay-rate-1-val', help=None, label_visibility="collapsed")
     with col2:
       st.write("E")
     with col3:
-      y = st.number_input('Exponent', min_value=0, max_value=10, value=4, step=1, format="%i",
+      y = st.number_input('Exponent', min_value=0, max_value=10, value=1, step=1, format="%i",
                           key='act-rad-decay-rate-1-power', help=None, label_visibility="collapsed")
     Values.RArad.append(x * 10 ** y)
 
@@ -148,12 +148,12 @@ def sidebar():
       "$R^{rad}_2$ - Radiative decay rate of the second energy state [$s^{-1}$]")
     col1, col2, col3 = st.columns([10, 1, 8])
     with col1:
-      x = st.number_input('Coefficient', min_value=0.0, max_value=9.9, value=1.0, step=0.1, format="%.3f",
+      x = st.number_input('Coefficient', min_value=0.0, max_value=9.9, value=1.5, step=0.1, format="%.3f",
                           key='act-rad-decay-rate-2-val', help=None, label_visibility="collapsed")
     with col2:
       st.write("E")
     with col3:
-      y = st.number_input('Exponent', min_value=0, max_value=10, value=3, step=1, format="%i",
+      y = st.number_input('Exponent', min_value=0, max_value=10, value=2, step=1, format="%i",
                           key='act-rad-decay-rate-2-power', help=None, label_visibility="collapsed")
     Values.RArad.append(x * 10 ** y)
 
@@ -161,12 +161,12 @@ def sidebar():
       "$R^{rad}_3$ - Radiative decay rate of the third energy state [$s^{-1}$]")
     col1, col2, col3 = st.columns([10, 1, 8])
     with col1:
-      x = st.number_input('Coefficient', min_value=0.0, max_value=9.9, value=1.5, step=0.1, format="%.3f",
+      x = st.number_input('Coefficient', min_value=0.0, max_value=9.9, value=0.7, step=0.1, format="%.3f",
                           key='act-rad-decay-rate-3-val', help=None, label_visibility="collapsed")
     with col2:
       st.write("E")
     with col3:
-      y = st.number_input('Exponent', min_value=0, max_value=10, value=3, step=1, format="%i",
+      y = st.number_input('Exponent', min_value=0, max_value=10, value=2, step=1, format="%i",
                           key='act-rad-decay-rate-3-power', help=None, label_visibility="collapsed")
     Values.RArad.append(x * 10 ** y)
 
@@ -174,12 +174,12 @@ def sidebar():
       "$R^{rad}_4$ - Radiative decay rate of the fourth energy state [$s^{-1}$]")
     col1, col2, col3 = st.columns([10, 1, 8])
     with col1:
-      x = st.number_input('Coefficient', min_value=0.0, max_value=9.9, value=1.5, step=0.1, format="%.3f",
+      x = st.number_input('Coefficient', min_value=0.0, max_value=9.9, value=0.4, step=0.1, format="%.3f",
                           key='act-rad-decay-rate-4-val', help=None, label_visibility="collapsed")
     with col2:
       st.write("E")
     with col3:
-      y = st.number_input('Exponent', min_value=0, max_value=10, value=3, step=1, format="%i",
+      y = st.number_input('Exponent', min_value=0, max_value=10, value=0, step=1, format="%i",
                           key='act-rad-decay-rate-4-power', help=None, label_visibility="collapsed")
     Values.RArad.append(x * 10 ** y)
 
@@ -190,7 +190,7 @@ def sidebar():
       "$\lambda_1$ - Emission wavelength from first excited state [$nm$]")
     Values.emissionWavelengths.append(
       st.number_input("Emission wavelength regarding the first excited energy state",
-                      min_value=200.0, max_value=2000.0, value=1000.0, step=1.0, format="%.1f",
+                      min_value=200.0, max_value=2000.0, value=1050.0, step=1.0, format="%.1f",
                       key='emission-wavelength-1', help="Insert a float number in nano-meters",
                       label_visibility="collapsed")
     )
@@ -229,7 +229,7 @@ def sidebar():
       "$W_0$ - Energy transfer rate from ground to first excited state [$s^{-1}$]")
     col1, col2, col3 = st.columns([10, 1, 8])
     with col1:
-      x = st.number_input('Coefficient', min_value=0.0, max_value=9.9, value=1.6, step=0.1, format="%.3f",
+      x = st.number_input('Coefficient', min_value=0.0, max_value=9.9, value=8.0, step=0.1, format="%.3f",
                           key='et-rate-0-val', help=None, label_visibility="collapsed")
     with col2:
       st.write("E")
@@ -242,12 +242,12 @@ def sidebar():
       "$W_1$ - Energy transfer rate from first to second excited state [$s^{-1}$]")
     col1, col2, col3 = st.columns([10, 1, 8])
     with col1:
-      x = st.number_input('Coefficient', min_value=0.0, max_value=9.9, value=6.2, step=0.1, format="%.3f",
+      x = st.number_input('Coefficient', min_value=0.0, max_value=9.9, value=1.9, step=0.1, format="%.3f",
                           key='et-rate-1-val', help=None, label_visibility="collapsed")
     with col2:
       st.write("E")
     with col3:
-      y = st.number_input('Exponent', min_value=-30, max_value=0, value=-16, step=1, format="%i",
+      y = st.number_input('Exponent', min_value=-30, max_value=0, value=-18, step=1, format="%i",
                           key='et-rate-1-power', help=None, label_visibility="collapsed")
     Values.WA.append(x * 10 ** y)
 
@@ -255,7 +255,7 @@ def sidebar():
       "$W_2$ - Energy transfer rate from second to third excited state [$s^{-1}$]")
     col1, col2, col3 = st.columns([10, 1, 8])
     with col1:
-      x = st.number_input('Coefficient', min_value=0.0, max_value=9.9, value=1.52, step=0.1, format="%.3f",
+      x = st.number_input('Coefficient', min_value=0.0, max_value=9.9, value=5.9, step=0.1, format="%.3f",
                           key='et-rate-2-val', help=None, label_visibility="collapsed")
     with col2:
       st.write("E")
@@ -268,7 +268,7 @@ def sidebar():
       "$W_3$ - Energy transfer rate from third to fourth excited state [$s^-1$]")
     col1, col2, col3 = st.columns([10, 1, 8])
     with col1:
-      x = st.number_input('Coefficient', min_value=0.0, max_value=9.9, value=1.52, step=0.1, format="%.3f",
+      x = st.number_input('Coefficient', min_value=0.0, max_value=9.9, value=4.3, step=0.1, format="%.3f",
                           key='et-rate-3-val', help=None, label_visibility="collapsed")
     with col2:
       st.write("E")
@@ -281,7 +281,7 @@ def sidebar():
       "$W_4$ - Energy transfer rate from fourth to fifth excited state [$s^-1$]")
     col1, col2, col3 = st.columns([10, 1, 8])
     with col1:
-      x = st.number_input('Coefficient', min_value=0.00001, max_value=9.9, value=0.00001, step=0.1, format="%.3f",
+      x = st.number_input('Coefficient', min_value=0.00001, max_value=9.9, value=0.1, step=0.1, format="%.3f",
                           key='et-rate-4-val', help=None, label_visibility="collapsed")
     with col2:
       st.write("E")
@@ -302,7 +302,7 @@ def sidebar():
     st.caption(r"$\rho$ - Power density range [$W/cm^2$]")
     Values.powerDensRange = st.slider(
       'Select a range of power densities [W/cm^2]',
-      0.0, 100.0, (0.0, 50.0), label_visibility="collapsed"
+      0.0, 400.0, (0.0, 100.0), label_visibility="collapsed"
     )
 
   # Export input vals to csv
