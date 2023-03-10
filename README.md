@@ -109,6 +109,5 @@ Email: [smatias.jean@gmail.com](emailto:smatias.jean@gmail.com) \
 LinkedIn: [jean-matias-496526140](https://www.linkedin.com/in/jean-matias-496526140/) \
 Webpage: [https://jsmatias.net](https://jsmatias.net)
 
----
 
 We will do our best to respond to your inquiry as soon as possible. Thank you for your interest in our web app!
