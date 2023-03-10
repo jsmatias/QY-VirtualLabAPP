@@ -4,7 +4,7 @@ import plotly.graph_objects as go
 
 def luminescence(data):
   fig = go.Figure()
-  luminCols = [col for col in data.columns if 'Luminescence' in col]
+  luminCols = [col for col in data.columns if 'Lumin' in col]
   for col in luminCols:
     fig.add_trace(go.Scatter(x=data["power-dens"], y=0.03 * data[col],
                              mode='lines+markers',
@@ -86,17 +86,20 @@ def chartPanel(data, transitionPoints):
     rho1 = transitionPoints['rhoi'][0]
     rho2 = transitionPoints['rhoi'][1]
     rho3 = transitionPoints['rhoi'][2]
+    rho4 = transitionPoints['rhoi'][3]
     etaS1 = transitionPoints['QYs'][0] * 100
     etaS2 = transitionPoints['QYs'][1] * 100
     etaS3 = transitionPoints['QYs'][2] * 100
+    etaS4 = transitionPoints['QYs'][3] * 100
     st.markdown(f"""
     #### Transition points
 
-    |   | {rhoiStr}       | {etaSiStr}      | 
+    | i | {rhoiStr}       | {etaSiStr}      | 
     |---| --------------: | --------------: | 
     | 1 | {rho1:.3f}      | {etaS1:.4g}     | 
     | 2 | {rho2:.3f}      | {etaS2:.4g}     | 
     | 3 | {rho3:.3f}      | {etaS3:.4g}     | 
+    | 4 | {rho4:.3f}      | {etaS4:.4g}     | 
     """)
     # st.write(transitionPoints)
 

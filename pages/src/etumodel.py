@@ -2,6 +2,7 @@ from scipy import constants as cte
 import pandas as pd
 import numpy as np
 
+
 def transitionPowerDensj(j, inputConstants):
   nu = cte.c / (inputConstants.excitationWavelength * 10**(-9))
   alpha = inputConstants.crossSection / (cte.h * nu)
@@ -38,7 +39,7 @@ def getTransitionPoints(inputConstants):
 
   rhoiArr = []
   qySaturationArr = []
-  for j in range(1, len(inputConstants.RA) - 1):
+  for j in range(1, len(inputConstants.RA)):
     rhoiArr.append(transitionPowerDensj(j, inputConstants))
     qySaturationArr.append(
       inputConstants.WA[0] * inputConstants.RArad[j] * inputConstants.WA[1] * inputConstants.NA /
@@ -68,9 +69,9 @@ def getData(inputConstants):
       "QY3": QYj(3, powerDens, inputConstants),
       "QY4": QYj(4, powerDens, inputConstants)
   })
-  for i in range(1, 4):
+  for i in range(1, 5):
     emissionNu = cte.c / (inputConstants.emissionWavelengths[i] * 10**(-9))
-    data[f'Luminescence-{i}'] = data[f'N{i}'] * \
+    data[f'Lumin. {inputConstants.emissionWavelengths[i]} nm'] = data[f'N{i}'] * \
         cte.h * emissionNu * inputConstants.RArad[i]
 
   return data
