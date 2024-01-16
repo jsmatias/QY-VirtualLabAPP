@@ -15,9 +15,14 @@ transitionPointsImg = Image.open('imgs/panel-2.png')
 dataImg = Image.open('imgs/panel-3.png')
 citation = f"""
 @article{{jsmatias2023,
-  author = {{...}},
-  title = {{...}},
+  author = {{Matias, J. S. and Komolibus, K. and Kho, K. W. and Konugolu-Venkata-Sekar, S. and Andersson-Engels, S.}},
+  title = {{Generalised analytical model of the transition power densities of the upconversion luminescence and quantum yield}},
   year = {{2023}},
+  volume = {{5}},
+  issue = {{12}},
+  pages = {{3279-3286}},
+  publisher ={{RSC}},
+  doi = {{10.1039/D2NA00850E}},
   note = {{Accessed: """ + f"{date.today().strftime('%m/%d/%Y')}}}" + "\n}"
 
 st.title("Upconversion Virtual Lab")
